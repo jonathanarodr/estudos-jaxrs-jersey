@@ -41,8 +41,8 @@ public class ClienteTest {
 	
 	@Test
 	public void testaQueAConexaoComOServidorFunciona() {
-		String conteudo = this.target.path("/carrinhos/1").request().get(String.class);
-		Carrinho carrinho = (Carrinho) new XStream().fromXML(conteudo);
+		Carrinho carrinho = this.target.path("/carrinhos/1").request().get(Carrinho.class);
+		//Carrinho carrinho = (Carrinho) new XStream().fromXML(conteudo);
 		Assert.assertEquals("Rua Vergueiro 3185, 8 andar", carrinho.getRua());
     }
 
